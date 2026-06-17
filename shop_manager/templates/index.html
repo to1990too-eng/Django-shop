@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Todo App index</title>
-</head>
-<body>
-    <h1>Добро пожаловать на наш сайт!</h1>
-    <h3>
-  Текущее время:
-  <time id="live-clock" datetime="{% now 'Y-m-d\TH:i:s' %}">
+{% extends 'base.html' %}
+
+{% block title %}
+    Todo app index
+{% endblock title %}
+
+{% block body %}
+<h1>Добро пожаловать на наш сайт!</h1>
+<h3>
+  Текущее время:<time id="live-clock" datetime="{% now 'Y-m-d\TH:i:s' %}">
     {% now "d.m.Y H:i:s" %}
   </time>
-    </h3>
+</h3>
 
     <script>
   function updateClock() {
@@ -40,6 +39,4 @@
   // Запускаем обновление каждую секунду (1000 миллисекунд)
   setInterval(updateClock, 1000);
 </script>
-
-</body>
-</html>
+{% endblock body %}
